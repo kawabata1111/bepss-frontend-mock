@@ -8,23 +8,29 @@
 <style>
 body,html{margin:0;padding:0}
 .c-list__naked{list-style:none;padding:0;margin:0}
+/* Dropdown closed by default */
+#app-header .p-header--account .c-dropdown,
+#app-header .p-header--facility .c-dropdown{height:0;overflow:hidden;transition:height 0.2s}
+#app-header .p-header--account.is-open .c-dropdown,
+#app-header .p-header--facility.is-open .c-dropdown{height:auto;overflow:visible}
 </style>
 </head>
 <body>
 <div id="app-root">
   <header id="app-header">
-    <h1><a href="index.html"><img class="logo-img" src="img/logo-img.png" alt=""><img class="logo-text" src="img/logo-text.png" alt="BePSS"></a></h1>
+    <h1><a href="index.html"><img class="logo-img" src="https://bepss.jp/img/logo/logo-img.svg" alt=""><img class="logo-text" src="https://bepss.jp/img/logo/logo-text.svg" alt="BePSS"></a></h1>
     <nav class="p-header--facility">
       <div class="p-header--facility--name c-dropdown--handle">所属する全教室 <span class="c-icon c-icon--chevron-down"></span></div>
+      <div class="c-dropdown c-filterableSelect c-dropdown__arrow"></div>
     </nav>
     <div class="p-header--account">
-      <div class="p-header--account--name c-dropdown--handle" onclick="this.parentElement.classList.toggle('is-open')">中道 武 <span class="c-icon c-icon--config"></span></div>
-      <div class="c-dropdown c-dropdown--menu">
-        <ul class="c-list__naked">
-          <li><a href="settings.html">個人設定</a></li>
-          <li><a href="facility.html">教室管理</a></li>
-          <li><a href="#">ログアウト</a></li>
-        </ul>
+      <div class="p-header--account--name c-dropdown--handle">中道 武 <span class="c-icon c-icon--config"></span></div>
+      <div class="c-dropdown c-dropdown__arrow">
+        <div class="c-dropdown--menu">
+          <a href="settings.html" class="c-dropdown--item"><span class="c-icon c-icon--config"></span>個人設定</a>
+          <a href="facility.html" class="c-dropdown--item"><span class="c-icon c-icon--classroom"></span>教室管理</a>
+          <a href="#" class="c-dropdown--item"><span class="c-icon c-icon--logout"></span>ログアウト</a>
+        </div>
       </div>
     </div>
   </header>
@@ -49,78 +55,23 @@ body,html{margin:0;padding:0}
           <section class="c-page--section highPriority">
             <h2 class="c-page--section--title">重要なお知らせ</h2>
             <div class="p-dashboard--list p-dashboard--list__compact">
-              <div class="p-dashboard--list--item">
-                <a href="users_plans.html">
-                  <span class="p-dashboard--list--caption">モニタリングの作成</span>
-                  <span class="p-dashboard--list--action">
-                    <span class="p-dashboard--list--counter">2<small>人</small></span>
-                    <span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span>
-                  </span>
-                </a>
-              </div>
-              <div class="p-dashboard--list--item">
-                <a href="users.html">
-                  <span class="p-dashboard--list--caption">受給者証の更新</span>
-                  <span class="p-dashboard--list--action">
-                    <span class="p-dashboard--list--counter">35<small>人</small></span>
-                    <span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span>
-                  </span>
-                </a>
-              </div>
+              <div class="p-dashboard--list--item"><a href="users_plans.html"><span class="p-dashboard--list--caption">モニタリングの作成</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">2<small>人</small></span><span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span></span></a></div>
+              <div class="p-dashboard--list--item"><a href="users.html"><span class="p-dashboard--list--caption">受給者証の更新</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">35<small>人</small></span><span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span></span></a></div>
             </div>
           </section>
           <section class="c-page--section">
             <h2 class="c-page--section--title">本日の状況</h2>
             <div class="p-dashboard--list p-dashboard--list__compact">
-              <div class="p-dashboard--list--item">
-                <a href="attendances.html">
-                  <span class="p-dashboard--list--caption">利用者</span>
-                  <span class="p-dashboard--list--action">
-                    <span class="p-dashboard--list--counter">0<small>人</small></span>
-                    <span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span>
-                  </span>
-                </a>
-              </div>
-              <div class="p-dashboard--list--item">
-                <a href="#">
-                  <span class="p-dashboard--list--caption">スタッフ</span>
-                  <span class="p-dashboard--list--action">
-                    <span class="p-dashboard--list--counter">0<small>人</small></span>
-                    <span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span>
-                  </span>
-                </a>
-              </div>
-              <div class="p-dashboard--list--item">
-                <a href="pickups.html">
-                  <span class="p-dashboard--list--caption">送迎</span>
-                  <span class="p-dashboard--list--action">
-                    <span class="p-dashboard--list--counter">0<small>人</small></span>
-                    <span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span>
-                  </span>
-                </a>
-              </div>
+              <div class="p-dashboard--list--item"><a href="attendances.html"><span class="p-dashboard--list--caption">利用者</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">0<small>人</small></span><span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span></span></a></div>
+              <div class="p-dashboard--list--item"><a href="#"><span class="p-dashboard--list--caption">スタッフ</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">0<small>人</small></span><span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span></span></a></div>
+              <div class="p-dashboard--list--item"><a href="pickups.html"><span class="p-dashboard--list--caption">送迎</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">0<small>人</small></span><span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span></span></a></div>
             </div>
           </section>
           <section class="c-page--section actions">
             <h2 class="c-page--section--title">本日の記入</h2>
             <div class="p-dashboard--list p-dashboard--list__compact">
-              <div class="p-dashboard--list--item">
-                <a href="daily_reports_new.html">
-                  <span class="p-dashboard--list--caption">児童業務日報</span>
-                  <span class="p-dashboard--list--action">
-                    <button class="c-btn c-btn__primary">作成</button>
-                  </span>
-                </a>
-              </div>
-              <div class="p-dashboard--list--item">
-                <a href="#">
-                  <span class="p-dashboard--list--caption">支援記録未作成</span>
-                  <span class="p-dashboard--list--action">
-                    <span class="p-dashboard--list--counter">0<small>人</small></span>
-                    <span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span>
-                  </span>
-                </a>
-              </div>
+              <div class="p-dashboard--list--item"><a href="daily_reports_new.html"><span class="p-dashboard--list--caption">児童業務日報</span><span class="p-dashboard--list--action"><button class="c-btn c-btn__primary">作成</button></span></a></div>
+              <div class="p-dashboard--list--item"><a href="#"><span class="p-dashboard--list--caption">支援記録未作成</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">0<small>人</small></span><span class="c-btn c-btn__default c-btn__xs"><span class="mr-3 c-icon c-icon--list"></span>一覧</span></span></a></div>
             </div>
           </section>
         </main>
@@ -128,6 +79,18 @@ body,html{margin:0;padding:0}
     </div>
   </div>
 </div>
-<script src="js/app.js"></script>
+<script>
+// Toggle dropdown menus
+document.querySelectorAll('.c-dropdown--handle').forEach(handle => {
+  handle.addEventListener('click', function() {
+    this.parentElement.classList.toggle('is-open');
+  });
+});
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.c-dropdown--handle') && !e.target.closest('.c-dropdown')) {
+    document.querySelectorAll('.is-open').forEach(el => el.classList.remove('is-open'));
+  }
+});
+</script>
 </body>
-                </html>
+                                                                                                    </html>
