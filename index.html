@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホーム | BePSS</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app-root">
+  <header id="app-header">
+    <h1><a href="index.html" class="active"><span class="logo-text">BePSS</span></a></h1>
+    <nav class="p-header--facility">
+      <div class="p-header--facility--name"><span>所属する全教室</span><span class="chevron">▼</span></div>
+    </nav>
+    <div class="p-header--account">
+      <div class="p-header--account--name" onclick="toggleMenu()"><span>中道 武</span><span class="config-icon">⚙</span></div>
+      <div class="c-dropdown--menu" id="accountMenu">
+        <ul><li><a href="settings.html">個人設定</a></li><li><a href="facility.html">教室管理</a></li><li><a href="#">ログアウト</a></li></ul>
+      </div>
+    </div>
+  </header>
+  <div id="app-body">
+    <div id="app-nav">
+      <nav id="app-globalNav">
+        <ul class="c-list__naked">
+          <li><a href="index.html" class="active"><span class="nav-icon">🏠</span><span>ホーム</span></a></li>
+          <li><a href="users.html"><span class="nav-icon">👤</span><span>利用者</span></a></li>
+          <li><a href="attendances.html"><span class="nav-icon">📋</span><span>教室利用</span></a></li>
+          <li><a href="pickups.html"><span class="nav-icon">🚗</span><span>送迎表</span></a></li>
+          <li><a href="daily_reports.html"><span class="nav-icon">📝</span><span>日報</span></a></li>
+          <li><a href="work_schedules.html"><span class="nav-icon">✅</span><span>勤務表</span></a></li>
+          <li><a href="mail_deliveries.html"><span class="nav-icon">📧</span><span>メール配信</span></a></li>
+          <li><a href="visitors.html"><span class="nav-icon">👥</span><span>見学者用シート</span></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="app-main">
+      <div class="container">
+        <main class="p-dashboard">
+          <section class="c-page--section highPriority">
+            <h2 class="c-page--section--title">重要なお知らせ</h2>
+            <div class="p-dashboard--list p-dashboard--list__compact">
+              <div class="p-dashboard--list--item"><a href="users_plans.html"><span class="p-dashboard--list--caption">モニタリングの作成</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">2<small>人</small></span><span class="c-btn c-btn__default c-btn__xs">一覧</span></span></a></div>
+              <div class="p-dashboard--list--item"><a href="users.html"><span class="p-dashboard--list--caption">受給者証の更新</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter highlight">35<small>人</small></span><span class="c-btn c-btn__default c-btn__xs">一覧</span></span></a></div>
+            </div>
+          </section>
+          <section class="c-page--section">
+            <h2 class="c-page--section--title">本日の状況</h2>
+            <div class="p-dashboard--list p-dashboard--list__compact">
+              <div class="p-dashboard--list--item"><a href="attendances.html"><span class="p-dashboard--list--caption">利用者</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">0<small>人</small></span><span class="c-btn c-btn__default c-btn__xs">一覧</span></span></a></div>
+              <div class="p-dashboard--list--item"><a href="#"><span class="p-dashboard--list--caption">スタッフ</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">0<small>人</small></span><span class="c-btn c-btn__default c-btn__xs">一覧</span></span></a></div>
+              <div class="p-dashboard--list--item"><a href="pickups.html"><span class="p-dashboard--list--caption">送迎</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">0<small>人</small></span><span class="c-btn c-btn__default c-btn__xs">一覧</span></span></a></div>
+            </div>
+          </section>
+          <section class="c-page--section actions">
+            <h2 class="c-page--section--title">本日の記入</h2>
+            <div class="p-dashboard--list p-dashboard--list__compact">
+              <div class="p-dashboard--list--item"><a href="daily_reports_new.html"><span class="p-dashboard--list--caption">児童業務日報</span><span class="p-dashboard--list--action"><button class="c-btn c-btn__primary">作成</button></span></a></div>
+              <div class="p-dashboard--list--item"><a href="#"><span class="p-dashboard--list--caption">支援記録未作成</span><span class="p-dashboard--list--action"><span class="p-dashboard--list--counter">0<small>人</small></span><span class="c-btn c-btn__default c-btn__xs">一覧</span></span></a></div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+                                                                       </html>
