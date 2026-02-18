@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教室利用 | BePSS</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app-root">
+  <header id="app-header">
+    <h1><a href="index.html"><span class="logo-text">BePSS</span></a></h1>
+    <nav class="p-header--facility"><div class="p-header--facility--name"><span>所属する全教室</span><span class="chevron">▼</span></div></nav>
+    <div class="p-header--account"><div class="p-header--account--name" onclick="toggleMenu()"><span>中道 武</span><span class="config-icon">⚙</span></div><div class="c-dropdown--menu" id="accountMenu"><ul><li><a href="settings.html">個人設定</a></li><li><a href="facility.html">教室管理</a></li><li><a href="#">ログアウト</a></li></ul></div></div>
+  </header>
+  <div id="app-body">
+    <div id="app-nav">
+      <nav id="app-globalNav">
+        <ul class="c-list__naked">
+          <li><a href="index.html"><span class="nav-icon">🏠</span><span>ホーム</span></a></li>
+          <li><a href="users.html"><span class="nav-icon">👤</span><span>利用者</span></a></li>
+          <li><a href="attendances.html" class="active"><span class="nav-icon">📋</span><span>教室利用</span></a></li>
+          <li><a href="pickups.html"><span class="nav-icon">🚗</span><span>送迎表</span></a></li>
+          <li><a href="daily_reports.html"><span class="nav-icon">📝</span><span>日報</span></a></li>
+          <li><a href="work_schedules.html"><span class="nav-icon">✅</span><span>勤務表</span></a></li>
+          <li><a href="mail_deliveries.html"><span class="nav-icon">📧</span><span>メール配信</span></a></li>
+          <li><a href="visitors.html"><span class="nav-icon">👥</span><span>見学者用シート</span></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="app-main">
+      <div class="container">
+        <main>
+          <h2 class="c-page--title" style="background:#c8a84e;color:#fff;padding:8px 15px;border-radius:4px;margin-bottom:15px;">教室利用</h2>
+          <div class="c-tab">
+            <a href="attendances.html" class="active">日別</a>
+            <a href="attendances_monthly.html">月別</a>
+          </div>
+          <div style="margin-bottom:15px;">
+            <input type="date" value="2026-02-18" class="c-form--input" style="width:200px;">
+          </div>
+          <div class="c-card">
+            <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
+              <button class="c-btn c-btn__primary c-btn__sm">⊕ 追加</button>
+              <button class="c-btn c-btn__default c-btn__sm" style="background:#daa520;color:#fff;border-color:#daa520;">終了時刻を一括で入力</button>
+            </div>
+            <table class="c-table">
+              <thead>
+                <tr><th>利用者 ▲</th><th>お迎え時刻<br><small>（個人来所時刻）</small></th><th>利用開始時刻</th><th>利用終了時刻</th><th>欠席</th></tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="5" style="text-align:center;color:#888;padding:30px;">データがありません</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
